@@ -5,7 +5,7 @@ jupyter:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.11.5
+      jupytext_version: 1.14.0
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -121,7 +121,7 @@ To convert a relative to an absolute path, use `abspath`:
 
 ```{python}
 # Show the current working directory
-os.getcwd()
+print(os.getcwd())
 op.abspath('relative/path/then_filename.txt')
 ```
 
@@ -130,4 +130,8 @@ extension:
 
 ```{python}
 op.splitext('relative/path/then_filename.txt')
+```
+
+```{python}
+
 ```

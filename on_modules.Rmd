@@ -7,9 +7,9 @@ jupyter:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.10.3
+      jupytext_version: 1.14.0
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -57,8 +57,37 @@ without a loop?
 First we check the `vol_means` function works:
 
 ```{python}
+#For extra points
+img = nib.load(data_fname)
+data = img.get_fdata()
+print(data.shape)
+print(data.shape[:3])
+np.prod(data.shape[:3])
+```
+
+```{python}
+#For extra points
+def vol_means_extrapoints(image_fname):
+    img = nib.load(image_fname)
+    data = img.get_fdata()
+    vector_data = np.reshape(data, (np.prod(data.shape[:3]), data.shape[-1]))
+    means_vectorized = np.mean(vector_data, axis=0)
+    return np.array(means_vectorized)
+```
+
+```{python}
 my_means = vol_means(data_fname)
 plt.plot(my_means)
+```
+
+```{python}
+#For extra points
+my_means_2 = vol_means_extrapoints(data_fname)
+plt.plot(my_means_2)
+```
+
+```{python}
+assert np.allclose(my_means, my_means_2)
 ```
 
 We are interested in outlier detection.  Let's make a routine to detect
@@ -165,7 +194,7 @@ As with other modules, you can explore the functions and data available in this 
 
 ```{python}
 # Uncomment to try exploring the volmeans module.
-# volmeans.
+volmeans.
 ```
 
 Now we find that the functions defined in the module are attached to the imported module, `volmeans`.
