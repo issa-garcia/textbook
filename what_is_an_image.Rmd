@@ -141,6 +141,7 @@ How do I find out what `type` of object is attached to this variable called
 
 ```{python}
 # your code here
+type(contents)
 ```
 
 How big is this file in terms of bytes? Can you find out from the
@@ -148,7 +149,7 @@ How big is this file in terms of bytes? Can you find out from the
 `contents`).
 
 ```{python}
-# n_bytes = ?
+# n_bytes = len(contents)
 ```
 
 If 1 mebibyte (MiB)
@@ -157,7 +158,7 @@ is size 1024 \* 1024, what is the file size in MiB? (Hint - the right answer is
 between 0 and 100).
 
 ```{python}
-# n_mib = ?
+# n_mib = 40894816/1024
 ```
 
 This is a [NIfTI1 format](http://nifti.nimh.nih.gov/nifti-1) file.
@@ -173,7 +174,7 @@ bytes:
 ```{python}
 # Here you print out the first 352 characters of `contents`
 # Your code here:
-# print(...)
+print(contents)
 ```
 
 Which software wrote this image?

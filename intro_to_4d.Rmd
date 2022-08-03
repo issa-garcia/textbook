@@ -7,9 +7,9 @@ jupyter:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.13.7
+      jupytext_version: 1.14.0
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -205,4 +205,8 @@ mean across time):
 mean_vol = np.mean(data, axis=3)
 # Show the middle plane of this mean volume.
 plt.imshow(mean_vol[:, :, 14], cmap='gray')
+```
+
+```{python}
+
 ```
