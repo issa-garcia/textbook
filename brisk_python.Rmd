@@ -1389,6 +1389,11 @@ my_file.write("MATLAB is good for matrices\n")
 my_file.write("Python is good for coding\n")
 ```
 
+```{python}
+my_file.
+```
+
+
 You should close the file when you’ve finished with it:
 
 ```{python}

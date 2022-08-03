@@ -7,12 +7,16 @@ jupyter:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.10.1
+      jupytext_version: 1.14.0
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
+
+```{python}
+
+```
 
 # Three-dimensional arrays
 
@@ -211,8 +215,47 @@ into_3d[2, :, :]
 Make a prediction of what the values would look like by slicing in the second
 dimension.
 
+![](images/two_d_slices_edited.png)
+
 Check your guess below:
 
 ```{python}
+second_2d
+```
+
+```{python}
 # Your code here
+# Predictions
+#First slice:
+# 10 100
+# 13 103
+# 16 106
+# 19 109
+#Second slice:
+# 11 101
+# 14 104
+# 17 107
+# 20 110
+#Third slice:
+# 12 102
+# 15 105
+# 18 108
+# 21 111
+
+print("1st")
+print(into_3d[:,0,:])
+
+print("2nd")
+print(into_3d[:,1,:])
+
+print("3rd")
+print(into_3d[:,2,:])
+
+print()
+print(into_3d.shape)
+print(into_3d)
+```
+
+```{python}
+
 ```

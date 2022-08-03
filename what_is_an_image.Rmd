@@ -7,9 +7,9 @@ jupyter:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.11.5
+      jupytext_version: 1.14.0
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -141,6 +141,7 @@ How do I find out what `type` of object is attached to this variable called
 
 ```{python}
 # your code here
+type(contents)
 ```
 
 How big is this file in terms of bytes? Can you find out from the
@@ -148,7 +149,7 @@ How big is this file in terms of bytes? Can you find out from the
 `contents`).
 
 ```{python}
-# n_bytes = ?
+# n_bytes = len(contents)
 ```
 
 If 1 mebibyte (MiB)
@@ -157,7 +158,7 @@ is size 1024 \* 1024, what is the file size in MiB? (Hint - the right answer is
 between 0 and 100).
 
 ```{python}
-# n_mib = ?
+# n_mib = 40894816/1024
 ```
 
 This is a [NIfTI1 format](http://nifti.nimh.nih.gov/nifti-1) file.
@@ -173,7 +174,16 @@ bytes:
 ```{python}
 # Here you print out the first 352 characters of `contents`
 # Your code here:
-# print(...)
+print(contents[:352])
+
+#struct.unpack(fmt_specifier, contents[:352])
+```
+
+```{python}
+import nibabel as nib
+n1_img = nib.load(structural_fname)
+print(n1_img.header)
+print(contents)
 ```
 
 Which software wrote this image?
@@ -195,6 +205,12 @@ value?
 offset` column in the NIfTI1 header page above):
 
 *Hint2* - if you want to work it out, don't look at the cell further down!
+
+```{python}
+import numpy as np
+n1_np = np.asanyarray(n1_img.dataobj)
+print(n1_np.dtype)
+```
 
 ```{python}
 # data_type_chars = ?
@@ -227,6 +243,10 @@ in the Python documentation and the NIfTI web page above.
 Here is the format specifier for our value:
 
 ```{python}
+# struct.unpack?
+```
+
+```{python}
 fmt_specifier = 'h'  # Why? (check the web pages above)
 ```
 
@@ -236,6 +256,10 @@ Now we read the datatype value into a number that Python understands:
 # In case you didn't do this above, this is the way to get the bytes
 # we need from the header.
 data_type_chars = contents[70:72]
+```
+
+```{python}
+data_type_chars
 ```
 
 ```{python}
@@ -281,6 +305,10 @@ type(img)
 ```
 
 Let’s have a look at the `header` that Nibabel read in when it made the image object.
+
+```{python}
+2**32
+```
 
 ```{python}
 print(img.header)

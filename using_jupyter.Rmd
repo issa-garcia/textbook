@@ -122,6 +122,7 @@ Now your turn.  Calculate Alex and Billie's bill including the tip:
 ```{python}
 # The bill, including the tip
 # Type your code below.
+(10.50 + 9.25) * 1.15
 ```
 
 Alex and Billie are each going to pay half the bill.   Calculate half the bill (where the bill is the total bill including the tip):
@@ -129,6 +130,7 @@ Alex and Billie are each going to pay half the bill.   Calculate half the bill (
 ```{python}
 # Half the total bill, including the tip
 # Type your code below.
+((10.50 + 9.25) * 1.15) / 2
 ```
 
 Alex is planning to drink three cherry colas, each at £1.50.   Billie is going to have a glass of wine, at £3.50.  Now what is their combined bill, plus tip?
@@ -136,4 +138,5 @@ Alex is planning to drink three cherry colas, each at £1.50.   Billie is going 
 ```{python}
 # The total bill, including drinks, and the tip.
 # Type your code below.
+(10.50 + 9.25 + 1.5*3 + 3.5) * 1.15
 ```
